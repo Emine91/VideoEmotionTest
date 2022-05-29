@@ -1,0 +1,3745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220529 12:41:21.161" rpa="false" schemaversion="3">
+<suite id="s1" name="BasicTest" source="C:\Users\mahamrouni\PycharmProjects\VideoEmotionTest\Tests\BasicTest.robot">
+<test id="s1-t1" name="User can open home page" line="13">
+<kw name="Debut Test" library="CommonFunctionality" type="SETUP">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20220529 12:41:21.769" level="INFO" html="true">Directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20220529 12:41:21.769" endtime="20220529 12:41:21.769"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${prefs}</var>
+<arg>download.default_directory=${path}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220529 12:41:21.769" level="INFO">${prefs} = {'download.default_directory': 'C:\\downloads_selenium'}</msg>
+<status status="PASS" starttime="20220529 12:41:21.769" endtime="20220529 12:41:21.769"/>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>https://${login}:${pw}@${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("prefs",${prefs})</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220529 12:41:21.769" level="INFO">Opening browser 'chrome' to base url 'https://demo:R@7m"cfQT@k5@demo.alteca.fr:4047/'.</msg>
+<status status="PASS" starttime="20220529 12:41:21.769" endtime="20220529 12:41:25.163"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220529 12:41:25.164" endtime="20220529 12:41:25.296"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:21.769" endtime="20220529 12:41:25.296"/>
+</kw>
+<kw name="Verifier element statique" library="ReelTimePage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>VIDEO EMOTION</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:25.297" endtime="20220529 12:41:25.316"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>recognition</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:25.316" endtime="20220529 12:41:25.330"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath:/html/body/header/div/a/img</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:25.367" level="INFO">Current page contains image 'xpath:/html/body/header/div/a/img'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.330" endtime="20220529 12:41:25.367"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>xpath://*[@id="result_bloc"]/div/p</arg>
+<arg>Aucun résultat actuellement ! Vous devez démarrer l'analyse...</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 12:41:25.424" level="INFO">Element 'xpath://*[@id="result_bloc"]/div/p' contains text 'Aucun résultat actuellement ! Vous devez démarrer l'analyse...'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.367" endtime="20220529 12:41:25.424"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath://*[@id="result_bloc"]/div/img</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:25.459" level="INFO">Current page contains image 'xpath://*[@id="result_bloc"]/div/img'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.424" endtime="20220529 12:41:25.461"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:25.297" endtime="20220529 12:41:25.461"/>
+</kw>
+<kw name="Test liste url" library="ReelTimePage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://*[@id="url"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:25.462" level="INFO">Clicking element 'xpath://*[@id="url"]'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.462" endtime="20220529 12:41:25.592"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath://*[@id="url"]</arg>
+<arg>https://www.youtube.com/watch?v=Ab5GOnkS1mk</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:25.593" level="INFO">Typing text 'https://www.youtube.com/watch?v=Ab5GOnkS1mk' into text field 'xpath://*[@id="url"]'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.593" endtime="20220529 12:41:25.711"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:25.462" endtime="20220529 12:41:25.711"/>
+</kw>
+<kw name="Lancer analyse" library="ReelTimePage">
+<kw name="Clear Element Text" library="Selenium2Library">
+<arg>xpath://*[@id="url"]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220529 12:41:25.712" endtime="20220529 12:41:25.752"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath://*[@id="url"]</arg>
+<arg>https://www.youtube.com/watch?v=WFMTzZ6RfZE</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:25.752" level="INFO">Typing text 'https://www.youtube.com/watch?v=WFMTzZ6RfZE' into text field 'xpath://*[@id="url"]'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.752" endtime="20220529 12:41:25.987"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath:/html/body/section[1]/div[1]/div[2]/input</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:25.987" level="INFO">Clicking button 'xpath:/html/body/section[1]/div[1]/div[2]/input'.</msg>
+<status status="PASS" starttime="20220529 12:41:25.987" endtime="20220529 12:41:26.117"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:41:27.125" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220529 12:41:26.117" endtime="20220529 12:41:27.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:25.711" endtime="20220529 12:41:27.126"/>
+</kw>
+<kw name="Verifier resultat statistique globale" library="ReelTimePage">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:27.127" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:27.127" endtime="20220529 12:41:27.264"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Analyse en cours..</arg>
+<arg>timeout=300s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:27.264" endtime="20220529 12:41:27.309"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Analyse terminée !</arg>
+<arg>timeout=300s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:27.309" endtime="20220529 12:41:52.085"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:52.086" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:52.085" endtime="20220529 12:41:52.093"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath://*[@id="PanelOfEmotion"]/img[1]</arg>
+<arg>timeout=1000s</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:52.124" level="INFO">Current page contains image 'xpath://*[@id="PanelOfEmotion"]/img[1]'.</msg>
+<status status="PASS" starttime="20220529 12:41:52.093" endtime="20220529 12:41:52.124"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath://*[@id="PanelOfEmotion"]/img[2]</arg>
+<arg>timeout=1000s</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:52.163" level="INFO">Current page contains image 'xpath://*[@id="PanelOfEmotion"]/img[2]'.</msg>
+<status status="PASS" starttime="20220529 12:41:52.124" endtime="20220529 12:41:52.163"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath://*[@id="mostRepresented"]/img</arg>
+<arg>timeout=1000s</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:52.205" level="INFO">Current page contains image 'xpath://*[@id="mostRepresented"]/img'.</msg>
+<status status="PASS" starttime="20220529 12:41:52.164" endtime="20220529 12:41:52.205"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:52.206" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:52.206" endtime="20220529 12:41:52.212"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>xpath://*[@id="bestAudience"]/div</arg>
+<arg>User 1</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 12:41:52.254" level="INFO">Element 'xpath://*[@id="bestAudience"]/div' contains text 'User 1'.</msg>
+<status status="PASS" starttime="20220529 12:41:52.213" endtime="20220529 12:41:52.254"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>xpath://*[@id="nbr_of_users"]</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 12:41:52.329" level="INFO">Element 'xpath://*[@id="nbr_of_users"]' contains text '1'.</msg>
+<status status="PASS" starttime="20220529 12:41:52.254" endtime="20220529 12:41:52.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>id:global_synthesis_timeline</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220529 12:41:52.330" endtime="20220529 12:41:52.381"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:52.383" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:52.382" endtime="20220529 12:41:52.391"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:41:54.412" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220529 12:41:52.391" endtime="20220529 12:41:54.412"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:27.127" endtime="20220529 12:41:54.412"/>
+</kw>
+<kw name="Verifier Fin traitement" library="ReelTimePage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Analyse terminée !</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:54.412" endtime="20220529 12:41:54.440"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:54.412" endtime="20220529 12:41:54.441"/>
+</kw>
+<kw name="Verifier element statique" library="AsynchPage">
+<kw name="Click Link" library="Selenium2Library">
+<arg>link:Analyse multi</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:54.443" level="INFO">Clicking link 'link:Analyse multi'.</msg>
+<status status="PASS" starttime="20220529 12:41:54.442" endtime="20220529 12:41:55.081"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath:/html/body/header/div/a/img</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:55.110" level="INFO">Current page contains image 'xpath:/html/body/header/div/a/img'.</msg>
+<status status="PASS" starttime="20220529 12:41:55.081" endtime="20220529 12:41:55.110"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>xpath://*[@id="urls"]</arg>
+<arg>https://www.youtube.com/watch?v=WFMTzZ6RfZE;https://www.youtube.com/watch?v=Ab5GOnkS1mk;</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 12:41:55.376" level="INFO">Element 'xpath://*[@id="urls"]' contains text 'https://www.youtube.com/watch?v=WFMTzZ6RfZE;https://www.youtube.com/watch?v=Ab5GOnkS1mk;'.</msg>
+<status status="PASS" starttime="20220529 12:41:55.110" endtime="20220529 12:41:55.376"/>
+</kw>
+<kw name="Element Should Contain" library="Selenium2Library">
+<arg>xpath://*[@id="result_bloc_general"]/div/p</arg>
+<arg>Aucun résultat actuellement ! Vous devez démarrer l'analyse...</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220529 12:41:55.412" level="INFO">Element 'xpath://*[@id="result_bloc_general"]/div/p' contains text 'Aucun résultat actuellement ! Vous devez démarrer l'analyse...'.</msg>
+<status status="PASS" starttime="20220529 12:41:55.376" endtime="20220529 12:41:55.412"/>
+</kw>
+<kw name="Page Should Contain Image" library="Selenium2Library">
+<arg>xpath://*[@id="result_bloc_general"]/div/img</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20220529 12:41:55.440" level="INFO">Current page contains image 'xpath://*[@id="result_bloc_general"]/div/img'.</msg>
+<status status="PASS" starttime="20220529 12:41:55.412" endtime="20220529 12:41:55.440"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:54.442" endtime="20220529 12:41:55.441"/>
+</kw>
+<kw name="Lancer analyse" library="AsynchPage">
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath://*[@id="getReportBtn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220529 12:41:55.441" level="INFO">Clicking button 'xpath://*[@id="getReportBtn"]'.</msg>
+<status status="PASS" starttime="20220529 12:41:55.441" endtime="20220529 12:41:55.563"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:55.564" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:55.564" endtime="20220529 12:41:55.573"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>Analyse en cours..</arg>
+<arg>timeout=300s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:55.573" endtime="20220529 12:41:55.593"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>En attente de traitement</arg>
+<arg>timeout=300s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220529 12:41:55.593" endtime="20220529 12:41:55.608"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:41:59.615" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220529 12:41:55.609" endtime="20220529 12:41:59.615"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:41:59.619" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:41:59.617" endtime="20220529 12:41:59.640"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:55.441" endtime="20220529 12:41:59.641"/>
+</kw>
+<kw name="Ajouter url" library="AsynchPage">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:00.660" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220529 12:41:59.645" endtime="20220529 12:42:00.661"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 10)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:42:00.662" level="INFO">Executing JavaScript:
+window.scrollTo(0, 10)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:42:00.661" endtime="20220529 12:42:00.678"/>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<arg>xpath://*[@id="urls"]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220529 12:42:00.678" endtime="20220529 12:42:00.766"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath://*[@id="urls"]</arg>
+<arg>https://www.youtube.com/watch?v=Qj-298ZG7JE</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:00.767" level="INFO">Typing text 'https://www.youtube.com/watch?v=Qj-298ZG7JE' into text field 'xpath://*[@id="urls"]'.</msg>
+<status status="PASS" starttime="20220529 12:42:00.766" endtime="20220529 12:42:00.915"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath://*[@id="addReportBtn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:00.916" level="INFO">Clicking button 'xpath://*[@id="addReportBtn"]'.</msg>
+<status status="PASS" starttime="20220529 12:42:00.916" endtime="20220529 12:42:00.983"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:04.989" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220529 12:42:00.983" endtime="20220529 12:42:04.989"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:42:04.992" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:42:04.990" endtime="20220529 12:42:05.008"/>
+</kw>
+<status status="PASS" starttime="20220529 12:41:59.641" endtime="20220529 12:42:05.009"/>
+</kw>
+<kw name="Annuler job" library="AsynchPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:05.014" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[2]'.</msg>
+<status status="PASS" starttime="20220529 12:42:05.013" endtime="20220529 12:42:05.070"/>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[2]/div[1]/div/p</arg>
+<arg>Annulation du job...</arg>
+<arg>timeout=600s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20220529 12:42:05.070" endtime="20220529 12:42:05.372"/>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[2]/div[1]/div/p</arg>
+<arg>Job annulé</arg>
+<arg>timeout=600s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20220529 12:42:05.372" endtime="20220529 12:42:22.043"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[3]/div[1]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:22.043" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[3]/div[1]/span[2]'.</msg>
+<status status="PASS" starttime="20220529 12:42:22.043" endtime="20220529 12:42:22.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:05.012" endtime="20220529 12:42:22.125"/>
+</kw>
+<kw name="Verifier le bouton de collapse extension" library="AsynchPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:22.128" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[1]'.</msg>
+<status status="PASS" starttime="20220529 12:42:22.127" endtime="20220529 12:42:22.213"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:23.218" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220529 12:42:22.213" endtime="20220529 12:42:23.218"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:23.219" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[1]'.</msg>
+<status status="PASS" starttime="20220529 12:42:23.218" endtime="20220529 12:42:23.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:24.296" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220529 12:42:23.290" endtime="20220529 12:42:24.296"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:22.127" endtime="20220529 12:42:24.296"/>
+</kw>
+<kw name="Verifier le bouton de fermeture de panel" library="AsynchPage">
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:24.296" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[2]/div[1]/span[2]'.</msg>
+<status status="PASS" starttime="20220529 12:42:24.296" endtime="20220529 12:42:24.407"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="Selenium2Library">
+<arg>xpath://*[@id="result-container-42ede68b-1dfa-4ba2-b181-4d6003908e83"]</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20220529 12:42:24.407" endtime="20220529 12:42:24.425"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:24.296" endtime="20220529 12:42:24.426"/>
+</kw>
+<kw name="Telecharger le rapport" library="AsynchPage">
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[1]/div[2]/div[1]/div/p</arg>
+<arg>Analyse terminée !</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20220529 12:42:24.426" endtime="20220529 12:42:24.461"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 550)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:42:24.462" level="INFO">Executing JavaScript:
+window.scrollTo(0, 550)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:42:24.461" endtime="20220529 12:42:24.472"/>
+</kw>
+<kw name="Count Items In Directory" library="OperatingSystem">
+<var>${count1}</var>
+<arg>${path}</arg>
+<doc>Returns and logs the number of all items in the given directory.</doc>
+<msg timestamp="20220529 12:42:24.473" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;'.</msg>
+<msg timestamp="20220529 12:42:24.474" level="INFO">6 items.</msg>
+<msg timestamp="20220529 12:42:24.474" level="INFO">${count1} = 6</msg>
+<status status="PASS" starttime="20220529 12:42:24.473" endtime="20220529 12:42:24.474"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[1]/div[2]/div[2]/div/ul/li[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:24.475" level="INFO">Clicking element 'xpath:/html/body/section[2]/div[2]/div[1]/div[2]/div[2]/div/ul/li[4]'.</msg>
+<status status="PASS" starttime="20220529 12:42:24.475" endtime="20220529 12:42:24.567"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:28.584" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220529 12:42:24.567" endtime="20220529 12:42:28.585"/>
+</kw>
+<kw name="Count Items In Directory" library="OperatingSystem">
+<var>${count2}</var>
+<arg>${path}</arg>
+<doc>Returns and logs the number of all items in the given directory.</doc>
+<msg timestamp="20220529 12:42:28.586" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;'.</msg>
+<msg timestamp="20220529 12:42:28.586" level="INFO">7 items.</msg>
+<msg timestamp="20220529 12:42:28.586" level="INFO">${count2} = 7</msg>
+<status status="PASS" starttime="20220529 12:42:28.585" endtime="20220529 12:42:28.586"/>
+</kw>
+<kw name="Directory Should Not Be Empty" library="OperatingSystem">
+<arg>${path}</arg>
+<doc>Fails if the specified directory is empty.</doc>
+<msg timestamp="20220529 12:42:28.586" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;'.</msg>
+<msg timestamp="20220529 12:42:28.586" level="INFO" html="true">Directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;' contains 7 items.</msg>
+<status status="PASS" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.586"/>
+</kw>
+<kw name="List Files In Directory" library="OperatingSystem">
+<var>@{files}</var>
+<arg>${path}</arg>
+<arg>*vid_o_d_lire_de_20_seconde*.txt</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<msg timestamp="20220529 12:42:28.586" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;'.</msg>
+<msg timestamp="20220529 12:42:28.586" level="INFO">7 files:
+2022-05-28_vid_o_d_lire_de_20_seconde (1).txt
+2022-05-28_vid_o_d_lire_de_20_seconde (2).txt
+2022-05-28_vid_o_d_lire_de_20_seconde (3).txt
+2022-05-28_vid_o_d_lire_de_20_seconde (4).txt
+2022-05-28_vid_o_d_lire_de_20_seconde (5).txt
+2022-05-28_vid_o_d_lire_de_20_seconde.txt
+2022-05-29_vid_o_d_lire_de_20_seconde.txt</msg>
+<msg timestamp="20220529 12:42:28.586" level="INFO">@{files} = [ 2022-05-28_vid_o_d_lire_de_20_seconde (1).txt | 2022-05-28_vid_o_d_lire_de_20_seconde (2).txt | 2022-05-28_vid_o_d_lire_de_20_seconde (3).txt | 2022-05-28_vid_o_d_lire_de_20_seconde (4).txt | 2022-0...</msg>
+<status status="PASS" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.586"/>
+</kw>
+<if>
+<branch type="IF" condition="${count2} &gt; ${count1}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>file downloaded</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.586"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.586"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>fail to donwload</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.601" endtime="20220529 12:42:28.601"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.602" endtime="20220529 12:42:28.602"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.602"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.586" endtime="20220529 12:42:28.602"/>
+</if>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${l_file}</var>
+<arg>${path}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.603" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium"&gt;C:\downloads_selenium&lt;/a&gt;' is 2022-05-29 12:42:24.</msg>
+<msg timestamp="20220529 12:42:28.603" level="INFO">${l_file} = 2022-05-29 12:42:24</msg>
+<status status="PASS" starttime="20220529 12:42:28.603" endtime="20220529 12:42:28.603"/>
+</kw>
+<for flavor="IN">
+<var>${file}</var>
+<value>@{files}</value>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde (1).txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.607" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (1).txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (1).txt&lt;/a&gt;' is 2022-05-29 00:31:38.</msg>
+<msg timestamp="20220529 12:42:28.607" level="INFO">${t} = 2022-05-29 00:31:38</msg>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.607" level="INFO">2022-05-29 00:31:38</msg>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.607"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde (2).txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.607" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (2).txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (2).txt&lt;/a&gt;' is 2022-05-29 00:38:17.</msg>
+<msg timestamp="20220529 12:42:28.607" level="INFO">${t} = 2022-05-29 00:38:17</msg>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.618"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.624" level="INFO">2022-05-29 00:38:17</msg>
+<status status="PASS" starttime="20220529 12:42:28.618" endtime="20220529 12:42:28.624"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.626" endtime="20220529 12:42:28.626"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.626" endtime="20220529 12:42:28.626"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.626" endtime="20220529 12:42:28.626"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.627" endtime="20220529 12:42:28.627"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.627" endtime="20220529 12:42:28.627"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.627" endtime="20220529 12:42:28.627"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.628" endtime="20220529 12:42:28.628"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.628" endtime="20220529 12:42:28.628"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.628" endtime="20220529 12:42:28.628"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.625" endtime="20220529 12:42:28.628"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.625" endtime="20220529 12:42:28.628"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.607" endtime="20220529 12:42:28.628"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde (3).txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.630" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (3).txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (3).txt&lt;/a&gt;' is 2022-05-29 00:41:54.</msg>
+<msg timestamp="20220529 12:42:28.630" level="INFO">${t} = 2022-05-29 00:41:54</msg>
+<status status="PASS" starttime="20220529 12:42:28.629" endtime="20220529 12:42:28.630"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.630" level="INFO">2022-05-29 00:41:54</msg>
+<status status="PASS" starttime="20220529 12:42:28.630" endtime="20220529 12:42:28.630"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.631" endtime="20220529 12:42:28.632"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.632" endtime="20220529 12:42:28.632"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.632" endtime="20220529 12:42:28.632"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.633" endtime="20220529 12:42:28.633"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.633" endtime="20220529 12:42:28.633"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.632" endtime="20220529 12:42:28.633"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.633" endtime="20220529 12:42:28.634"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.634" endtime="20220529 12:42:28.635"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.635" endtime="20220529 12:42:28.635"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.631" endtime="20220529 12:42:28.635"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.631" endtime="20220529 12:42:28.635"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.629" endtime="20220529 12:42:28.635"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde (4).txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.636" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (4).txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (4).txt&lt;/a&gt;' is 2022-05-29 00:48:18.</msg>
+<msg timestamp="20220529 12:42:28.636" level="INFO">${t} = 2022-05-29 00:48:18</msg>
+<status status="PASS" starttime="20220529 12:42:28.635" endtime="20220529 12:42:28.636"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.636" level="INFO">2022-05-29 00:48:18</msg>
+<status status="PASS" starttime="20220529 12:42:28.636" endtime="20220529 12:42:28.637"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.635" endtime="20220529 12:42:28.637"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde (5).txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.637" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (5).txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde (5).txt&lt;/a&gt;' is 2022-05-29 01:00:53.</msg>
+<msg timestamp="20220529 12:42:28.637" level="INFO">${t} = 2022-05-29 01:00:53</msg>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.637" level="INFO">2022-05-29 01:00:53</msg>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-28_vid_o_d_lire_de_20_seconde.txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.637" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde.txt"&gt;C:\downloads_selenium\2022-05-28_vid_o_d_lire_de_20_seconde.txt&lt;/a&gt;' is 2022-05-29 00:27:29.</msg>
+<msg timestamp="20220529 12:42:28.637" level="INFO">${t} = 2022-05-29 00:27:29</msg>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.637" level="INFO">2022-05-29 00:27:29</msg>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</iter>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.637"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.651"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<status status="NOT RUN" starttime="20220529 12:42:28.651" endtime="20220529 12:42:28.651"/>
+</kw>
+<status status="NOT RUN" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.651"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.651"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.637" endtime="20220529 12:42:28.652"/>
+</iter>
+<iter>
+<var name="${file}">2022-05-29_vid_o_d_lire_de_20_seconde.txt</var>
+<kw name="Get Modified Time" library="OperatingSystem">
+<var>${t}</var>
+<arg>${path}\\${file}</arg>
+<arg>0</arg>
+<doc>Returns the last modification time of a file or directory.</doc>
+<msg timestamp="20220529 12:42:28.653" level="INFO" html="true">Last modified time of '&lt;a href="file://C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt"&gt;C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt&lt;/a&gt;' is 2022-05-29 12:42:24.</msg>
+<msg timestamp="20220529 12:42:28.653" level="INFO">${t} = 2022-05-29 12:42:24</msg>
+<status status="PASS" starttime="20220529 12:42:28.652" endtime="20220529 12:42:28.653"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${t}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.653" level="INFO">2022-05-29 12:42:24</msg>
+<status status="PASS" starttime="20220529 12:42:28.653" endtime="20220529 12:42:28.653"/>
+</kw>
+<if>
+<branch type="IF" condition="'${t}' == '${l_file}'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>trouvee</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220529 12:42:28.653" endtime="20220529 12:42:28.653"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${contents}</var>
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220529 12:42:28.653" level="INFO" html="true">Getting file '&lt;a href="file://C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt"&gt;C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20220529 12:42:28.660" level="INFO">${contents} = {
+    "uuid": "ee8ec7ab-83be-46dc-a70f-773b3a3138b5",
+    "title": "vidéo délire de 20 seconde",
+    "duration": "00:00:23",
+    "url": "https://www.youtube.com/watch?v=WFMTzZ6RfZE",
+    "report": {
+ ...</msg>
+<status status="PASS" starttime="20220529 12:42:28.653" endtime="20220529 12:42:28.660"/>
+</kw>
+<kw name="Split To Lines" library="String">
+<var>@{lines}</var>
+<arg>${contents}</arg>
+<doc>Splits the given string to lines.</doc>
+<msg timestamp="20220529 12:42:28.660" level="INFO">220 lines returned</msg>
+<msg timestamp="20220529 12:42:28.660" level="INFO">@{lines} = [ { |     "uuid": "ee8ec7ab-83be-46dc-a70f-773b3a3138b5", |     "title": "vidéo délire de 20 seconde", |     "duration": "00:00:23", |     "url": "https://www.youtube.com/watch?v=WFMTzZ6RfZE", |     "...</msg>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:28.660"/>
+</kw>
+<for flavor="IN">
+<var>${line}</var>
+<value>@{lines}</value>
+<iter>
+<var name="${line}">{</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.660" level="WARN">{</msg>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:28.660"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:28.660"/>
+</iter>
+<iter>
+<var name="${line}">    "uuid": "ee8ec7ab-83be-46dc-a70f-773b3a3138b5",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.660" level="WARN">    "uuid": "ee8ec7ab-83be-46dc-a70f-773b3a3138b5",</msg>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:28.668"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:28.668"/>
+</iter>
+<iter>
+<var name="${line}">    "title": "vidéo délire de 20 seconde",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "title": "vidéo délire de 20 seconde",</msg>
+<status status="PASS" starttime="20220529 12:42:28.668" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.668" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">    "duration": "00:00:23",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "duration": "00:00:23",</msg>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">    "url": "https://www.youtube.com/watch?v=WFMTzZ6RfZE",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "url": "https://www.youtube.com/watch?v=WFMTzZ6RfZE",</msg>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">    "report": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "report": {</msg>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">        "1": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">        "1": {</msg>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">            "2": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.669" level="WARN">            "2": {</msg>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.669"/>
+</iter>
+<iter>
+<var name="${line}">                "time": 0.03341352579524191,</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.684" level="WARN">                "time": 0.03341352579524191,</msg>
+<status status="PASS" starttime="20220529 12:42:28.684" endtime="20220529 12:42:28.686"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.669" endtime="20220529 12:42:28.686"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion dominante visage": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</iter>
+<iter>
+<var name="${line}">                "labels visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                "labels visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</iter>
+<iter>
+<var name="${line}">                    "Anger",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Anger",</msg>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</iter>
+<iter>
+<var name="${line}">                    "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.686"/>
+</iter>
+<iter>
+<var name="${line}">                    "Disgust",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Disgust",</msg>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.701"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.686" endtime="20220529 12:42:28.701"/>
+</iter>
+<iter>
+<var name="${line}">                    "Fear",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.702" level="WARN">                    "Fear",</msg>
+<status status="PASS" starttime="20220529 12:42:28.701" endtime="20220529 12:42:28.703"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.701" endtime="20220529 12:42:28.703"/>
+</iter>
+<iter>
+<var name="${line}">                    "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.705" level="WARN">                    "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:28.705" endtime="20220529 12:42:28.706"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.704" endtime="20220529 12:42:28.707"/>
+</iter>
+<iter>
+<var name="${line}">                    "Sad",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.708" level="WARN">                    "Sad",</msg>
+<status status="PASS" starttime="20220529 12:42:28.707" endtime="20220529 12:42:28.709"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.707" endtime="20220529 12:42:28.709"/>
+</iter>
+<iter>
+<var name="${line}">                    "Surprise",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                    "Surprise",</msg>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.709"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.709"/>
+</iter>
+<iter>
+<var name="${line}">                    "Uncertain"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                    "Uncertain"</msg>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.709"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.709"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.717"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.709" endtime="20220529 12:42:28.717"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                "prediction visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.717" endtime="20220529 12:42:28.718"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.12985514",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.12985514",</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.7612598",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.7612598",</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0007003679",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.0007003679",</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00015948845",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.00015948845",</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.718"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.005537675",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.005537675",</msg>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.735"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.718" endtime="20220529 12:42:28.735"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0032039704",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.0032039704",</msg>
+<status status="PASS" starttime="20220529 12:42:28.735" endtime="20220529 12:42:28.736"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.735" endtime="20220529 12:42:28.736"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.09723818",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.09723818",</msg>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0020453827"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.0020453827"</msg>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction% visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                "prediction% visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.736"/>
+</iter>
+<iter>
+<var name="${line}">                    "12.99%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "12.99%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.750"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.736" endtime="20220529 12:42:28.750"/>
+</iter>
+<iter>
+<var name="${line}">                    "76.13%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.751" level="WARN">                    "76.13%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.751" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.750" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.07%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.07%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.55%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.55%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.32%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.32%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "9.72%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "9.72%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.753" endtime="20220529 12:42:28.753"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.2%"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.768" level="WARN">                    "0.2%"</msg>
+<status status="PASS" starttime="20220529 12:42:28.768" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.767" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion combined": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                "emotion combined": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                "box target": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                "box target": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                    "327",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                    "327",</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                    "139",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                    "139",</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.769"/>
+</iter>
+<iter>
+<var name="${line}">                    "679",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.785" level="WARN">                    "679",</msg>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.787"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.769" endtime="20220529 12:42:28.787"/>
+</iter>
+<iter>
+<var name="${line}">                    "622"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.788" level="WARN">                    "622"</msg>
+<status status="PASS" starttime="20220529 12:42:28.788" endtime="20220529 12:42:28.790"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.788" endtime="20220529 12:42:28.790"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.790" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.790" endtime="20220529 12:42:28.794"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.790" endtime="20220529 12:42:28.794"/>
+</iter>
+<iter>
+<var name="${line}">                "id": "1"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.795" level="WARN">                "id": "1"</msg>
+<status status="PASS" starttime="20220529 12:42:28.795" endtime="20220529 12:42:28.796"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.794" endtime="20220529 12:42:28.796"/>
+</iter>
+<iter>
+<var name="${line}">            },</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.799" level="WARN">            },</msg>
+<status status="PASS" starttime="20220529 12:42:28.798" endtime="20220529 12:42:28.801"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.796" endtime="20220529 12:42:28.801"/>
+</iter>
+<iter>
+<var name="${line}">            "3": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.803" level="WARN">            "3": {</msg>
+<status status="PASS" starttime="20220529 12:42:28.801" endtime="20220529 12:42:28.804"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.801" endtime="20220529 12:42:28.804"/>
+</iter>
+<iter>
+<var name="${line}">                "time": 5.045442395081529,</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.806" level="WARN">                "time": 5.045442395081529,</msg>
+<status status="PASS" starttime="20220529 12:42:28.804" endtime="20220529 12:42:28.808"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.804" endtime="20220529 12:42:28.808"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion dominante visage": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.809" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.809" endtime="20220529 12:42:28.811"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.808" endtime="20220529 12:42:28.812"/>
+</iter>
+<iter>
+<var name="${line}">                "labels visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.812" level="WARN">                "labels visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.812" endtime="20220529 12:42:28.814"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.812" endtime="20220529 12:42:28.814"/>
+</iter>
+<iter>
+<var name="${line}">                    "Anger",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.815" level="WARN">                    "Anger",</msg>
+<status status="PASS" starttime="20220529 12:42:28.815" endtime="20220529 12:42:28.819"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.815" endtime="20220529 12:42:28.819"/>
+</iter>
+<iter>
+<var name="${line}">                    "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.819" level="WARN">                    "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.819" endtime="20220529 12:42:28.820"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.819" endtime="20220529 12:42:28.820"/>
+</iter>
+<iter>
+<var name="${line}">                    "Disgust",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.823" level="WARN">                    "Disgust",</msg>
+<status status="PASS" starttime="20220529 12:42:28.820" endtime="20220529 12:42:28.825"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.820" endtime="20220529 12:42:28.825"/>
+</iter>
+<iter>
+<var name="${line}">                    "Fear",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.826" level="WARN">                    "Fear",</msg>
+<status status="PASS" starttime="20220529 12:42:28.826" endtime="20220529 12:42:28.829"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.825" endtime="20220529 12:42:28.829"/>
+</iter>
+<iter>
+<var name="${line}">                    "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.830" level="WARN">                    "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:28.830" endtime="20220529 12:42:28.832"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.829" endtime="20220529 12:42:28.832"/>
+</iter>
+<iter>
+<var name="${line}">                    "Sad",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.834" level="WARN">                    "Sad",</msg>
+<status status="PASS" starttime="20220529 12:42:28.833" endtime="20220529 12:42:28.836"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.832" endtime="20220529 12:42:28.836"/>
+</iter>
+<iter>
+<var name="${line}">                    "Surprise",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.837" level="WARN">                    "Surprise",</msg>
+<status status="PASS" starttime="20220529 12:42:28.837" endtime="20220529 12:42:28.840"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.836" endtime="20220529 12:42:28.840"/>
+</iter>
+<iter>
+<var name="${line}">                    "Uncertain"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.842" level="WARN">                    "Uncertain"</msg>
+<status status="PASS" starttime="20220529 12:42:28.841" endtime="20220529 12:42:28.844"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.841" endtime="20220529 12:42:28.844"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.845" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.845" endtime="20220529 12:42:28.845"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.844" endtime="20220529 12:42:28.848"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.849" level="WARN">                "prediction visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.849" endtime="20220529 12:42:28.851"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.848" endtime="20220529 12:42:28.851"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0402291",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0402291",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.851" endtime="20220529 12:42:28.852"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.95298386",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.95298386",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0007402826",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0007402826",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0002831693",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0002831693",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00020068474",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.00020068474",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.852"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00016645266",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.00016645266",</msg>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.867"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.852" endtime="20220529 12:42:28.867"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.004470276",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.868" level="WARN">                    "0.004470276",</msg>
+<status status="PASS" starttime="20220529 12:42:28.868" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.867" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0009261258"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "0.0009261258"</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction% visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                "prediction% visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                    "4.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "4.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                    "95.3%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "95.3%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.869"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.07%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.884" level="WARN">                    "0.07%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.885"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.869" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.03%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.03%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.45%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.45%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.09%"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.09%"</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.886"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.901"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.886" endtime="20220529 12:42:28.901"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion combined": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.903" level="WARN">                "emotion combined": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.901" endtime="20220529 12:42:28.905"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.901" endtime="20220529 12:42:28.905"/>
+</iter>
+<iter>
+<var name="${line}">                "box target": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.905" level="WARN">                "box target": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.905" endtime="20220529 12:42:28.907"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.905" endtime="20220529 12:42:28.907"/>
+</iter>
+<iter>
+<var name="${line}">                    "274",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.908" level="WARN">                    "274",</msg>
+<status status="PASS" starttime="20220529 12:42:28.907" endtime="20220529 12:42:28.910"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.907" endtime="20220529 12:42:28.910"/>
+</iter>
+<iter>
+<var name="${line}">                    "166",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "166",</msg>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.911"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.911"/>
+</iter>
+<iter>
+<var name="${line}">                    "655",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "655",</msg>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.911"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.911"/>
+</iter>
+<iter>
+<var name="${line}">                    "707"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "707"</msg>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.918"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.911" endtime="20220529 12:42:28.918"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.918" endtime="20220529 12:42:28.919"/>
+</iter>
+<iter>
+<var name="${line}">                "id": "1"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                "id": "1"</msg>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</iter>
+<iter>
+<var name="${line}">            },</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.919" level="WARN">            },</msg>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</iter>
+<iter>
+<var name="${line}">            "4": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.919" level="WARN">            "4": {</msg>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</iter>
+<iter>
+<var name="${line}">                "time": 10.057471264367816,</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                "time": 10.057471264367816,</msg>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.919"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion dominante visage": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.934" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.934" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.919" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                "labels visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                "labels visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                    "Anger",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Anger",</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                    "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                    "Disgust",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Disgust",</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                    "Fear",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Fear",</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.936"/>
+</iter>
+<iter>
+<var name="${line}">                    "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.951"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.936" endtime="20220529 12:42:28.951"/>
+</iter>
+<iter>
+<var name="${line}">                    "Sad",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Sad",</msg>
+<status status="PASS" starttime="20220529 12:42:28.951" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.951" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                    "Surprise",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Surprise",</msg>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                    "Uncertain"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Uncertain"</msg>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                "prediction visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0049250317",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "0.0049250317",</msg>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.952"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.98326725",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.968" level="WARN">                    "0.98326725",</msg>
+<status status="PASS" starttime="20220529 12:42:28.967" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.952" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00015542294",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00015542294",</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "2.424819e-05",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "2.424819e-05",</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00029809444",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00029809444",</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0006772174",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.0006772174",</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.01051185",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.01051185",</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.969"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00014079576"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00014079576"</msg>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.985"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.969" endtime="20220529 12:42:28.985"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction% visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                "prediction% visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.49%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.49%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</iter>
+<iter>
+<var name="${line}">                    "98.33%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "98.33%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:28.986"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.0%",</msg>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:29.002"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.986" endtime="20220529 12:42:29.002"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.03%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.004" level="WARN">                    "0.03%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.002" endtime="20220529 12:42:29.006"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.002" endtime="20220529 12:42:29.006"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.07%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.007" level="WARN">                    "0.07%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.006" endtime="20220529 12:42:29.009"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.006" endtime="20220529 12:42:29.009"/>
+</iter>
+<iter>
+<var name="${line}">                    "1.05%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.010" level="WARN">                    "1.05%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.010" endtime="20220529 12:42:29.011"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.010" endtime="20220529 12:42:29.011"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.01%"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.011" level="WARN">                    "0.01%"</msg>
+<status status="PASS" starttime="20220529 12:42:29.011" endtime="20220529 12:42:29.011"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.011" endtime="20220529 12:42:29.011"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.011" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.011" endtime="20220529 12:42:29.017"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.011" endtime="20220529 12:42:29.017"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion combined": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.018" level="WARN">                "emotion combined": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:29.017" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.017" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                "box target": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                "box target": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                    "260",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "260",</msg>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                    "103",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "103",</msg>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                    "640",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "640",</msg>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                    "663"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "663"</msg>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.020"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.035" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.034" endtime="20220529 12:42:29.036"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.020" endtime="20220529 12:42:29.036"/>
+</iter>
+<iter>
+<var name="${line}">                "id": "1"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.037" level="WARN">                "id": "1"</msg>
+<status status="PASS" starttime="20220529 12:42:29.037" endtime="20220529 12:42:29.038"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.036" endtime="20220529 12:42:29.038"/>
+</iter>
+<iter>
+<var name="${line}">            },</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.039" level="WARN">            },</msg>
+<status status="PASS" starttime="20220529 12:42:29.039" endtime="20220529 12:42:29.041"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.039" endtime="20220529 12:42:29.041"/>
+</iter>
+<iter>
+<var name="${line}">            "5": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.042" level="WARN">            "5": {</msg>
+<status status="PASS" starttime="20220529 12:42:29.042" endtime="20220529 12:42:29.044"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.042" endtime="20220529 12:42:29.044"/>
+</iter>
+<iter>
+<var name="${line}">                "time": 15.069500133654103,</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.045" level="WARN">                "time": 15.069500133654103,</msg>
+<status status="PASS" starttime="20220529 12:42:29.044" endtime="20220529 12:42:29.046"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.044" endtime="20220529 12:42:29.046"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion dominante visage": "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.047" level="WARN">                "emotion dominante visage": "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:29.046" endtime="20220529 12:42:29.049"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.046" endtime="20220529 12:42:29.049"/>
+</iter>
+<iter>
+<var name="${line}">                "labels visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.049" level="WARN">                "labels visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.049" endtime="20220529 12:42:29.051"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.049" endtime="20220529 12:42:29.051"/>
+</iter>
+<iter>
+<var name="${line}">                    "Anger",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.052" level="WARN">                    "Anger",</msg>
+<status status="PASS" starttime="20220529 12:42:29.051" endtime="20220529 12:42:29.053"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.051" endtime="20220529 12:42:29.053"/>
+</iter>
+<iter>
+<var name="${line}">                    "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.053" level="WARN">                    "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:29.053" endtime="20220529 12:42:29.053"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.053" endtime="20220529 12:42:29.053"/>
+</iter>
+<iter>
+<var name="${line}">                    "Disgust",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.053" level="WARN">                    "Disgust",</msg>
+<status status="PASS" starttime="20220529 12:42:29.053" endtime="20220529 12:42:29.057"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.053" endtime="20220529 12:42:29.057"/>
+</iter>
+<iter>
+<var name="${line}">                    "Fear",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.058" level="WARN">                    "Fear",</msg>
+<status status="PASS" starttime="20220529 12:42:29.058" endtime="20220529 12:42:29.059"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.058" endtime="20220529 12:42:29.059"/>
+</iter>
+<iter>
+<var name="${line}">                    "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.059" level="WARN">                    "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.059"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.059"/>
+</iter>
+<iter>
+<var name="${line}">                    "Sad",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.059" level="WARN">                    "Sad",</msg>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.059"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.059"/>
+</iter>
+<iter>
+<var name="${line}">                    "Surprise",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.065" level="WARN">                    "Surprise",</msg>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.068"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.059" endtime="20220529 12:42:29.068"/>
+</iter>
+<iter>
+<var name="${line}">                    "Uncertain"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.069" level="WARN">                    "Uncertain"</msg>
+<status status="PASS" starttime="20220529 12:42:29.069" endtime="20220529 12:42:29.070"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.068" endtime="20220529 12:42:29.071"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.071" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.071" endtime="20220529 12:42:29.073"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.071" endtime="20220529 12:42:29.073"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.074" level="WARN">                "prediction visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.073" endtime="20220529 12:42:29.076"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.073" endtime="20220529 12:42:29.076"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0072595393",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.076" level="WARN">                    "0.0072595393",</msg>
+<status status="PASS" starttime="20220529 12:42:29.076" endtime="20220529 12:42:29.076"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.076" endtime="20220529 12:42:29.076"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.41398597",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.076" level="WARN">                    "0.41398597",</msg>
+<status status="PASS" starttime="20220529 12:42:29.076" endtime="20220529 12:42:29.082"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.076" endtime="20220529 12:42:29.082"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00029617644",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.085" level="WARN">                    "0.00029617644",</msg>
+<status status="PASS" starttime="20220529 12:42:29.084" endtime="20220529 12:42:29.087"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.082" endtime="20220529 12:42:29.087"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.000108124994",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.087" level="WARN">                    "0.000108124994",</msg>
+<status status="PASS" starttime="20220529 12:42:29.087" endtime="20220529 12:42:29.090"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.087" endtime="20220529 12:42:29.090"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.5020029",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.091" level="WARN">                    "0.5020029",</msg>
+<status status="PASS" starttime="20220529 12:42:29.090" endtime="20220529 12:42:29.093"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.090" endtime="20220529 12:42:29.093"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0011015242",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.093" level="WARN">                    "0.0011015242",</msg>
+<status status="PASS" starttime="20220529 12:42:29.093" endtime="20220529 12:42:29.093"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.093" endtime="20220529 12:42:29.093"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.06993534",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.093" level="WARN">                    "0.06993534",</msg>
+<status status="PASS" starttime="20220529 12:42:29.093" endtime="20220529 12:42:29.098"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.093" endtime="20220529 12:42:29.098"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.0053103874"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.099" level="WARN">                    "0.0053103874"</msg>
+<status status="PASS" starttime="20220529 12:42:29.098" endtime="20220529 12:42:29.100"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.098" endtime="20220529 12:42:29.101"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.101" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.101" endtime="20220529 12:42:29.102"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.101" endtime="20220529 12:42:29.103"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction% visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.103" level="WARN">                "prediction% visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.103" endtime="20220529 12:42:29.105"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.103" endtime="20220529 12:42:29.105"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.73%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.106" level="WARN">                    "0.73%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.106" endtime="20220529 12:42:29.108"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.106" endtime="20220529 12:42:29.108"/>
+</iter>
+<iter>
+<var name="${line}">                    "41.4%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.109" level="WARN">                    "41.4%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.109" endtime="20220529 12:42:29.110"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.109" endtime="20220529 12:42:29.110"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.03%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.110" level="WARN">                    "0.03%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.110" endtime="20220529 12:42:29.113"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.110" endtime="20220529 12:42:29.113"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.01%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.114" level="WARN">                    "0.01%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.113" endtime="20220529 12:42:29.115"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.113" endtime="20220529 12:42:29.115"/>
+</iter>
+<iter>
+<var name="${line}">                    "50.2%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.117" level="WARN">                    "50.2%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.116" endtime="20220529 12:42:29.118"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.115" endtime="20220529 12:42:29.118"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.11%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.119" level="WARN">                    "0.11%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.119" endtime="20220529 12:42:29.120"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.118" endtime="20220529 12:42:29.120"/>
+</iter>
+<iter>
+<var name="${line}">                    "6.99%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.121" level="WARN">                    "6.99%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.121" endtime="20220529 12:42:29.123"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.121" endtime="20220529 12:42:29.123"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.53%"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.124" level="WARN">                    "0.53%"</msg>
+<status status="PASS" starttime="20220529 12:42:29.123" endtime="20220529 12:42:29.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.123" endtime="20220529 12:42:29.125"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion combined": "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                "emotion combined": "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</iter>
+<iter>
+<var name="${line}">                "box target": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                "box target": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.125"/>
+</iter>
+<iter>
+<var name="${line}">                    "251",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.133" level="WARN">                    "251",</msg>
+<status status="PASS" starttime="20220529 12:42:29.133" endtime="20220529 12:42:29.135"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.125" endtime="20220529 12:42:29.135"/>
+</iter>
+<iter>
+<var name="${line}">                    "112",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "112",</msg>
+<status status="PASS" starttime="20220529 12:42:29.136" endtime="20220529 12:42:29.136"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.135" endtime="20220529 12:42:29.136"/>
+</iter>
+<iter>
+<var name="${line}">                    "635",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "635",</msg>
+<status status="PASS" starttime="20220529 12:42:29.136" endtime="20220529 12:42:29.136"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.136" endtime="20220529 12:42:29.136"/>
+</iter>
+<iter>
+<var name="${line}">                    "638"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "638"</msg>
+<status status="PASS" starttime="20220529 12:42:29.136" endtime="20220529 12:42:29.136"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.136" endtime="20220529 12:42:29.136"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.144" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.144"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.144"/>
+</iter>
+<iter>
+<var name="${line}">                "id": "1"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.144" level="WARN">                "id": "1"</msg>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.144"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.144"/>
+</iter>
+<iter>
+<var name="${line}">            },</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.144" level="WARN">            },</msg>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.151"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.144" endtime="20220529 12:42:29.151"/>
+</iter>
+<iter>
+<var name="${line}">            "6": {</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.153" level="WARN">            "6": {</msg>
+<status status="PASS" starttime="20220529 12:42:29.152" endtime="20220529 12:42:29.155"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.151" endtime="20220529 12:42:29.155"/>
+</iter>
+<iter>
+<var name="${line}">                "time": 20.08152900294039,</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.156" level="WARN">                "time": 20.08152900294039,</msg>
+<status status="PASS" starttime="20220529 12:42:29.156" endtime="20220529 12:42:29.157"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.155" endtime="20220529 12:42:29.157"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion dominante visage": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</iter>
+<iter>
+<var name="${line}">                "labels visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                "labels visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</iter>
+<iter>
+<var name="${line}">                    "Anger",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                    "Anger",</msg>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.157"/>
+</iter>
+<iter>
+<var name="${line}">                    "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                    "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.169"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.157" endtime="20220529 12:42:29.169"/>
+</iter>
+<iter>
+<var name="${line}">                    "Disgust",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.170" level="WARN">                    "Disgust",</msg>
+<status status="PASS" starttime="20220529 12:42:29.169" endtime="20220529 12:42:29.172"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.169" endtime="20220529 12:42:29.172"/>
+</iter>
+<iter>
+<var name="${line}">                    "Fear",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.174" level="WARN">                    "Fear",</msg>
+<status status="PASS" starttime="20220529 12:42:29.173" endtime="20220529 12:42:29.176"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.173" endtime="20220529 12:42:29.176"/>
+</iter>
+<iter>
+<var name="${line}">                    "Happy",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.177" level="WARN">                    "Happy",</msg>
+<status status="PASS" starttime="20220529 12:42:29.177" endtime="20220529 12:42:29.180"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.176" endtime="20220529 12:42:29.180"/>
+</iter>
+<iter>
+<var name="${line}">                    "Sad",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.180" level="WARN">                    "Sad",</msg>
+<status status="PASS" starttime="20220529 12:42:29.180" endtime="20220529 12:42:29.183"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.180" endtime="20220529 12:42:29.183"/>
+</iter>
+<iter>
+<var name="${line}">                    "Surprise",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.185" level="WARN">                    "Surprise",</msg>
+<status status="PASS" starttime="20220529 12:42:29.184" endtime="20220529 12:42:29.186"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.184" endtime="20220529 12:42:29.186"/>
+</iter>
+<iter>
+<var name="${line}">                    "Uncertain"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.187" level="WARN">                    "Uncertain"</msg>
+<status status="PASS" starttime="20220529 12:42:29.187" endtime="20220529 12:42:29.189"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.186" endtime="20220529 12:42:29.190"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.191" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.191" endtime="20220529 12:42:29.192"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.190" endtime="20220529 12:42:29.193"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.194" level="WARN">                "prediction visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.193" endtime="20220529 12:42:29.196"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.193" endtime="20220529 12:42:29.196"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.017058516",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.198" level="WARN">                    "0.017058516",</msg>
+<status status="PASS" starttime="20220529 12:42:29.197" endtime="20220529 12:42:29.200"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.197" endtime="20220529 12:42:29.200"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.83770245",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.202" level="WARN">                    "0.83770245",</msg>
+<status status="PASS" starttime="20220529 12:42:29.201" endtime="20220529 12:42:29.203"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.200" endtime="20220529 12:42:29.203"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00016932821",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.204" level="WARN">                    "0.00016932821",</msg>
+<status status="PASS" starttime="20220529 12:42:29.204" endtime="20220529 12:42:29.206"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.203" endtime="20220529 12:42:29.206"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.000118596654",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.207" level="WARN">                    "0.000118596654",</msg>
+<status status="PASS" starttime="20220529 12:42:29.206" endtime="20220529 12:42:29.208"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.206" endtime="20220529 12:42:29.208"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.055589695",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.209" level="WARN">                    "0.055589695",</msg>
+<status status="PASS" starttime="20220529 12:42:29.208" endtime="20220529 12:42:29.210"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.208" endtime="20220529 12:42:29.210"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.00017342556",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.211" level="WARN">                    "0.00017342556",</msg>
+<status status="PASS" starttime="20220529 12:42:29.211" endtime="20220529 12:42:29.212"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.210" endtime="20220529 12:42:29.212"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.08438908",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.214" level="WARN">                    "0.08438908",</msg>
+<status status="PASS" starttime="20220529 12:42:29.213" endtime="20220529 12:42:29.215"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.213" endtime="20220529 12:42:29.215"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.004798925"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.216" level="WARN">                    "0.004798925"</msg>
+<status status="PASS" starttime="20220529 12:42:29.216" endtime="20220529 12:42:29.217"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.215" endtime="20220529 12:42:29.217"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.218" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.218" endtime="20220529 12:42:29.220"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.218" endtime="20220529 12:42:29.220"/>
+</iter>
+<iter>
+<var name="${line}">                "prediction% visage": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.221" level="WARN">                "prediction% visage": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.220" endtime="20220529 12:42:29.223"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.220" endtime="20220529 12:42:29.223"/>
+</iter>
+<iter>
+<var name="${line}">                    "1.71%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.224" level="WARN">                    "1.71%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.223" endtime="20220529 12:42:29.225"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.223" endtime="20220529 12:42:29.225"/>
+</iter>
+<iter>
+<var name="${line}">                    "83.77%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.226" level="WARN">                    "83.77%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.225" endtime="20220529 12:42:29.226"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.225" endtime="20220529 12:42:29.227"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.227" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.227" endtime="20220529 12:42:29.229"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.227" endtime="20220529 12:42:29.229"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.01%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.229" level="WARN">                    "0.01%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.229" endtime="20220529 12:42:29.230"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.229" endtime="20220529 12:42:29.230"/>
+</iter>
+<iter>
+<var name="${line}">                    "5.56%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.230" level="WARN">                    "5.56%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.230" endtime="20220529 12:42:29.230"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.230" endtime="20220529 12:42:29.230"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.02%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.235" level="WARN">                    "0.02%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.234" endtime="20220529 12:42:29.242"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.234" endtime="20220529 12:42:29.242"/>
+</iter>
+<iter>
+<var name="${line}">                    "8.44%",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.243" level="WARN">                    "8.44%",</msg>
+<status status="PASS" starttime="20220529 12:42:29.242" endtime="20220529 12:42:29.243"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.242" endtime="20220529 12:42:29.243"/>
+</iter>
+<iter>
+<var name="${line}">                    "0.48%"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.244" level="WARN">                    "0.48%"</msg>
+<status status="PASS" starttime="20220529 12:42:29.244" endtime="20220529 12:42:29.245"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.244" endtime="20220529 12:42:29.245"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.245" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.245" endtime="20220529 12:42:29.248"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.245" endtime="20220529 12:42:29.248"/>
+</iter>
+<iter>
+<var name="${line}">                "emotion combined": "Neutral",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.249" level="WARN">                "emotion combined": "Neutral",</msg>
+<status status="PASS" starttime="20220529 12:42:29.249" endtime="20220529 12:42:29.251"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.249" endtime="20220529 12:42:29.251"/>
+</iter>
+<iter>
+<var name="${line}">                "box target": [</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.252" level="WARN">                "box target": [</msg>
+<status status="PASS" starttime="20220529 12:42:29.251" endtime="20220529 12:42:29.253"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.251" endtime="20220529 12:42:29.253"/>
+</iter>
+<iter>
+<var name="${line}">                    "232",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.254" level="WARN">                    "232",</msg>
+<status status="PASS" starttime="20220529 12:42:29.253" endtime="20220529 12:42:29.255"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.253" endtime="20220529 12:42:29.255"/>
+</iter>
+<iter>
+<var name="${line}">                    "118",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "118",</msg>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</iter>
+<iter>
+<var name="${line}">                    "614",</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "614",</msg>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</iter>
+<iter>
+<var name="${line}">                    "641"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "641"</msg>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</iter>
+<iter>
+<var name="${line}">                ],</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                ],</msg>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.255"/>
+</iter>
+<iter>
+<var name="${line}">                "id": "1"</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                "id": "1"</msg>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.261"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.255" endtime="20220529 12:42:29.261"/>
+</iter>
+<iter>
+<var name="${line}">            }</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.262" level="WARN">            }</msg>
+<status status="PASS" starttime="20220529 12:42:29.261" endtime="20220529 12:42:29.263"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.261" endtime="20220529 12:42:29.264"/>
+</iter>
+<iter>
+<var name="${line}">        }</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.264" level="WARN">        }</msg>
+<status status="PASS" starttime="20220529 12:42:29.264" endtime="20220529 12:42:29.265"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.264" endtime="20220529 12:42:29.265"/>
+</iter>
+<iter>
+<var name="${line}">    }</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.266" level="WARN">    }</msg>
+<status status="PASS" starttime="20220529 12:42:29.266" endtime="20220529 12:42:29.267"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.265" endtime="20220529 12:42:29.267"/>
+</iter>
+<iter>
+<var name="${line}">}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${line}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220529 12:42:29.268" level="WARN">}</msg>
+<status status="PASS" starttime="20220529 12:42:29.267" endtime="20220529 12:42:29.268"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.267" endtime="20220529 12:42:29.268"/>
+</iter>
+<status status="PASS" starttime="20220529 12:42:28.660" endtime="20220529 12:42:29.268"/>
+</for>
+<kw name="Get File" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220529 12:42:29.268" level="INFO" html="true">Getting file '&lt;a href="file://C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt"&gt;C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220529 12:42:29.268" endtime="20220529 12:42:29.271"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${path}\\${file}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220529 12:42:29.271" endtime="20220529 12:42:29.272"/>
+</kw>
+<kw name="File Should Not Be Empty" library="OperatingSystem">
+<arg>${path}\\${file}</arg>
+<doc>Fails if the specified file is empty.</doc>
+<msg timestamp="20220529 12:42:29.274" level="INFO" html="true">File '&lt;a href="file://C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt"&gt;C:\downloads_selenium\2022-05-29_vid_o_d_lire_de_20_seconde.txt&lt;/a&gt;' contains 6670 bytes.</msg>
+<status status="PASS" starttime="20220529 12:42:29.272" endtime="20220529 12:42:29.274"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:28.653" endtime="20220529 12:42:29.274"/>
+</branch>
+<status status="PASS" starttime="20220529 12:42:28.653" endtime="20220529 12:42:29.274"/>
+</if>
+<status status="PASS" starttime="20220529 12:42:28.652" endtime="20220529 12:42:29.274"/>
+</iter>
+<status status="PASS" starttime="20220529 12:42:28.603" endtime="20220529 12:42:29.274"/>
+</for>
+<status status="PASS" starttime="20220529 12:42:24.426" endtime="20220529 12:42:29.275"/>
+</kw>
+<kw name="Tester Url errone" library="AsynchPage">
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, 10)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:42:29.277" level="INFO">Executing JavaScript:
+window.scrollTo(0, 10)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:42:29.276" endtime="20220529 12:42:29.285"/>
+</kw>
+<kw name="Clear Element Text" library="Selenium2Library">
+<arg>xpath://*[@id="urls"]</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220529 12:42:29.286" endtime="20220529 12:42:29.348"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath://*[@id="urls"]</arg>
+<arg>https://www.youtube.com/watch?v=Ab5GOnkS1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:29.349" level="INFO">Typing text 'https://www.youtube.com/watch?v=Ab5GOnkS1' into text field 'xpath://*[@id="urls"]'.</msg>
+<status status="PASS" starttime="20220529 12:42:29.349" endtime="20220529 12:42:29.524"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath://*[@id="addReportBtn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:29.525" level="INFO">Clicking button 'xpath://*[@id="addReportBtn"]'.</msg>
+<status status="PASS" starttime="20220529 12:42:29.524" endtime="20220529 12:42:29.584"/>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>xpath:/html/body/section[2]/div[2]/div[3]/div[2]/div/div/p</arg>
+<arg>Une erreur s'est produite !</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20220529 12:42:29.584" endtime="20220529 12:42:29.859"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220529 12:42:29.859" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20220529 12:42:29.859" endtime="20220529 12:42:29.873"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.275" endtime="20220529 12:42:29.873"/>
+</kw>
+<kw name="Verifier element statique" library="ReversePage">
+<kw name="Click Link" library="Selenium2Library">
+<arg>link:Restitution</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220529 12:42:29.876" level="INFO">Clicking link 'link:Restitution'.</msg>
+<status status="PASS" starttime="20220529 12:42:29.875" endtime="20220529 12:42:30.570"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:29.874" endtime="20220529 12:42:30.570"/>
+</kw>
+<kw name="Fin Test" library="CommonFunctionality" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>8s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220529 12:42:38.580" level="INFO">Slept 8 seconds</msg>
+<status status="PASS" starttime="20220529 12:42:30.570" endtime="20220529 12:42:38.580"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220529 12:42:38.580" endtime="20220529 12:42:42.298"/>
+</kw>
+<status status="PASS" starttime="20220529 12:42:30.570" endtime="20220529 12:42:42.298"/>
+</kw>
+<doc>as a user i can open the web page and see the tag line</doc>
+<tag>Fonctionnel</tag>
+<status status="PASS" starttime="20220529 12:41:21.768" endtime="20220529 12:42:42.299"/>
+</test>
+<doc>this is a basic test</doc>
+<status status="PASS" starttime="20220529 12:41:21.180" endtime="20220529 12:42:42.305"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Fonctionnel</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="BasicTest">BasicTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220529 12:42:28.660" level="WARN">{</msg>
+<msg timestamp="20220529 12:42:28.660" level="WARN">    "uuid": "ee8ec7ab-83be-46dc-a70f-773b3a3138b5",</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "title": "vidéo délire de 20 seconde",</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "duration": "00:00:23",</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "url": "https://www.youtube.com/watch?v=WFMTzZ6RfZE",</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">    "report": {</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">        "1": {</msg>
+<msg timestamp="20220529 12:42:28.669" level="WARN">            "2": {</msg>
+<msg timestamp="20220529 12:42:28.684" level="WARN">                "time": 0.03341352579524191,</msg>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                "labels visage": [</msg>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Anger",</msg>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.686" level="WARN">                    "Disgust",</msg>
+<msg timestamp="20220529 12:42:28.702" level="WARN">                    "Fear",</msg>
+<msg timestamp="20220529 12:42:28.705" level="WARN">                    "Happy",</msg>
+<msg timestamp="20220529 12:42:28.708" level="WARN">                    "Sad",</msg>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                    "Surprise",</msg>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                    "Uncertain"</msg>
+<msg timestamp="20220529 12:42:28.709" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                "prediction visage": [</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.12985514",</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.7612598",</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.0007003679",</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.00015948845",</msg>
+<msg timestamp="20220529 12:42:28.718" level="WARN">                    "0.005537675",</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.0032039704",</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.09723818",</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "0.0020453827"</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                "prediction% visage": [</msg>
+<msg timestamp="20220529 12:42:28.736" level="WARN">                    "12.99%",</msg>
+<msg timestamp="20220529 12:42:28.751" level="WARN">                    "76.13%",</msg>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.07%",</msg>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.55%",</msg>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "0.32%",</msg>
+<msg timestamp="20220529 12:42:28.753" level="WARN">                    "9.72%",</msg>
+<msg timestamp="20220529 12:42:28.768" level="WARN">                    "0.2%"</msg>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                "emotion combined": "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                "box target": [</msg>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                    "327",</msg>
+<msg timestamp="20220529 12:42:28.769" level="WARN">                    "139",</msg>
+<msg timestamp="20220529 12:42:28.785" level="WARN">                    "679",</msg>
+<msg timestamp="20220529 12:42:28.788" level="WARN">                    "622"</msg>
+<msg timestamp="20220529 12:42:28.790" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.795" level="WARN">                "id": "1"</msg>
+<msg timestamp="20220529 12:42:28.799" level="WARN">            },</msg>
+<msg timestamp="20220529 12:42:28.803" level="WARN">            "3": {</msg>
+<msg timestamp="20220529 12:42:28.806" level="WARN">                "time": 5.045442395081529,</msg>
+<msg timestamp="20220529 12:42:28.809" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.812" level="WARN">                "labels visage": [</msg>
+<msg timestamp="20220529 12:42:28.815" level="WARN">                    "Anger",</msg>
+<msg timestamp="20220529 12:42:28.819" level="WARN">                    "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.823" level="WARN">                    "Disgust",</msg>
+<msg timestamp="20220529 12:42:28.826" level="WARN">                    "Fear",</msg>
+<msg timestamp="20220529 12:42:28.830" level="WARN">                    "Happy",</msg>
+<msg timestamp="20220529 12:42:28.834" level="WARN">                    "Sad",</msg>
+<msg timestamp="20220529 12:42:28.837" level="WARN">                    "Surprise",</msg>
+<msg timestamp="20220529 12:42:28.842" level="WARN">                    "Uncertain"</msg>
+<msg timestamp="20220529 12:42:28.845" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.849" level="WARN">                "prediction visage": [</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0402291",</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.95298386",</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0007402826",</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.0002831693",</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.00020068474",</msg>
+<msg timestamp="20220529 12:42:28.852" level="WARN">                    "0.00016645266",</msg>
+<msg timestamp="20220529 12:42:28.868" level="WARN">                    "0.004470276",</msg>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "0.0009261258"</msg>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                "prediction% visage": [</msg>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "4.02%",</msg>
+<msg timestamp="20220529 12:42:28.869" level="WARN">                    "95.3%",</msg>
+<msg timestamp="20220529 12:42:28.884" level="WARN">                    "0.07%",</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.03%",</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.45%",</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                    "0.09%"</msg>
+<msg timestamp="20220529 12:42:28.886" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.903" level="WARN">                "emotion combined": "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.905" level="WARN">                "box target": [</msg>
+<msg timestamp="20220529 12:42:28.908" level="WARN">                    "274",</msg>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "166",</msg>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "655",</msg>
+<msg timestamp="20220529 12:42:28.911" level="WARN">                    "707"</msg>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                "id": "1"</msg>
+<msg timestamp="20220529 12:42:28.919" level="WARN">            },</msg>
+<msg timestamp="20220529 12:42:28.919" level="WARN">            "4": {</msg>
+<msg timestamp="20220529 12:42:28.919" level="WARN">                "time": 10.057471264367816,</msg>
+<msg timestamp="20220529 12:42:28.934" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                "labels visage": [</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Anger",</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Neutral",</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Disgust",</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Fear",</msg>
+<msg timestamp="20220529 12:42:28.936" level="WARN">                    "Happy",</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Sad",</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Surprise",</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "Uncertain"</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                "prediction visage": [</msg>
+<msg timestamp="20220529 12:42:28.952" level="WARN">                    "0.0049250317",</msg>
+<msg timestamp="20220529 12:42:28.968" level="WARN">                    "0.98326725",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00015542294",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "2.424819e-05",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00029809444",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.0006772174",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.01051185",</msg>
+<msg timestamp="20220529 12:42:28.969" level="WARN">                    "0.00014079576"</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                "prediction% visage": [</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.49%",</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "98.33%",</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:28.986" level="WARN">                    "0.0%",</msg>
+<msg timestamp="20220529 12:42:29.004" level="WARN">                    "0.03%",</msg>
+<msg timestamp="20220529 12:42:29.007" level="WARN">                    "0.07%",</msg>
+<msg timestamp="20220529 12:42:29.010" level="WARN">                    "1.05%",</msg>
+<msg timestamp="20220529 12:42:29.011" level="WARN">                    "0.01%"</msg>
+<msg timestamp="20220529 12:42:29.011" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.018" level="WARN">                "emotion combined": "Neutral",</msg>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                "box target": [</msg>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "260",</msg>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "103",</msg>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "640",</msg>
+<msg timestamp="20220529 12:42:29.020" level="WARN">                    "663"</msg>
+<msg timestamp="20220529 12:42:29.035" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.037" level="WARN">                "id": "1"</msg>
+<msg timestamp="20220529 12:42:29.039" level="WARN">            },</msg>
+<msg timestamp="20220529 12:42:29.042" level="WARN">            "5": {</msg>
+<msg timestamp="20220529 12:42:29.045" level="WARN">                "time": 15.069500133654103,</msg>
+<msg timestamp="20220529 12:42:29.047" level="WARN">                "emotion dominante visage": "Happy",</msg>
+<msg timestamp="20220529 12:42:29.049" level="WARN">                "labels visage": [</msg>
+<msg timestamp="20220529 12:42:29.052" level="WARN">                    "Anger",</msg>
+<msg timestamp="20220529 12:42:29.053" level="WARN">                    "Neutral",</msg>
+<msg timestamp="20220529 12:42:29.053" level="WARN">                    "Disgust",</msg>
+<msg timestamp="20220529 12:42:29.058" level="WARN">                    "Fear",</msg>
+<msg timestamp="20220529 12:42:29.059" level="WARN">                    "Happy",</msg>
+<msg timestamp="20220529 12:42:29.059" level="WARN">                    "Sad",</msg>
+<msg timestamp="20220529 12:42:29.065" level="WARN">                    "Surprise",</msg>
+<msg timestamp="20220529 12:42:29.069" level="WARN">                    "Uncertain"</msg>
+<msg timestamp="20220529 12:42:29.071" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.074" level="WARN">                "prediction visage": [</msg>
+<msg timestamp="20220529 12:42:29.076" level="WARN">                    "0.0072595393",</msg>
+<msg timestamp="20220529 12:42:29.076" level="WARN">                    "0.41398597",</msg>
+<msg timestamp="20220529 12:42:29.085" level="WARN">                    "0.00029617644",</msg>
+<msg timestamp="20220529 12:42:29.087" level="WARN">                    "0.000108124994",</msg>
+<msg timestamp="20220529 12:42:29.091" level="WARN">                    "0.5020029",</msg>
+<msg timestamp="20220529 12:42:29.093" level="WARN">                    "0.0011015242",</msg>
+<msg timestamp="20220529 12:42:29.093" level="WARN">                    "0.06993534",</msg>
+<msg timestamp="20220529 12:42:29.099" level="WARN">                    "0.0053103874"</msg>
+<msg timestamp="20220529 12:42:29.101" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.103" level="WARN">                "prediction% visage": [</msg>
+<msg timestamp="20220529 12:42:29.106" level="WARN">                    "0.73%",</msg>
+<msg timestamp="20220529 12:42:29.109" level="WARN">                    "41.4%",</msg>
+<msg timestamp="20220529 12:42:29.110" level="WARN">                    "0.03%",</msg>
+<msg timestamp="20220529 12:42:29.114" level="WARN">                    "0.01%",</msg>
+<msg timestamp="20220529 12:42:29.117" level="WARN">                    "50.2%",</msg>
+<msg timestamp="20220529 12:42:29.119" level="WARN">                    "0.11%",</msg>
+<msg timestamp="20220529 12:42:29.121" level="WARN">                    "6.99%",</msg>
+<msg timestamp="20220529 12:42:29.124" level="WARN">                    "0.53%"</msg>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                "emotion combined": "Happy",</msg>
+<msg timestamp="20220529 12:42:29.125" level="WARN">                "box target": [</msg>
+<msg timestamp="20220529 12:42:29.133" level="WARN">                    "251",</msg>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "112",</msg>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "635",</msg>
+<msg timestamp="20220529 12:42:29.136" level="WARN">                    "638"</msg>
+<msg timestamp="20220529 12:42:29.144" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.144" level="WARN">                "id": "1"</msg>
+<msg timestamp="20220529 12:42:29.144" level="WARN">            },</msg>
+<msg timestamp="20220529 12:42:29.153" level="WARN">            "6": {</msg>
+<msg timestamp="20220529 12:42:29.156" level="WARN">                "time": 20.08152900294039,</msg>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                "emotion dominante visage": "Neutral",</msg>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                "labels visage": [</msg>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                    "Anger",</msg>
+<msg timestamp="20220529 12:42:29.157" level="WARN">                    "Neutral",</msg>
+<msg timestamp="20220529 12:42:29.170" level="WARN">                    "Disgust",</msg>
+<msg timestamp="20220529 12:42:29.174" level="WARN">                    "Fear",</msg>
+<msg timestamp="20220529 12:42:29.177" level="WARN">                    "Happy",</msg>
+<msg timestamp="20220529 12:42:29.180" level="WARN">                    "Sad",</msg>
+<msg timestamp="20220529 12:42:29.185" level="WARN">                    "Surprise",</msg>
+<msg timestamp="20220529 12:42:29.187" level="WARN">                    "Uncertain"</msg>
+<msg timestamp="20220529 12:42:29.191" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.194" level="WARN">                "prediction visage": [</msg>
+<msg timestamp="20220529 12:42:29.198" level="WARN">                    "0.017058516",</msg>
+<msg timestamp="20220529 12:42:29.202" level="WARN">                    "0.83770245",</msg>
+<msg timestamp="20220529 12:42:29.204" level="WARN">                    "0.00016932821",</msg>
+<msg timestamp="20220529 12:42:29.207" level="WARN">                    "0.000118596654",</msg>
+<msg timestamp="20220529 12:42:29.209" level="WARN">                    "0.055589695",</msg>
+<msg timestamp="20220529 12:42:29.211" level="WARN">                    "0.00017342556",</msg>
+<msg timestamp="20220529 12:42:29.214" level="WARN">                    "0.08438908",</msg>
+<msg timestamp="20220529 12:42:29.216" level="WARN">                    "0.004798925"</msg>
+<msg timestamp="20220529 12:42:29.218" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.221" level="WARN">                "prediction% visage": [</msg>
+<msg timestamp="20220529 12:42:29.224" level="WARN">                    "1.71%",</msg>
+<msg timestamp="20220529 12:42:29.226" level="WARN">                    "83.77%",</msg>
+<msg timestamp="20220529 12:42:29.227" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:29.229" level="WARN">                    "0.01%",</msg>
+<msg timestamp="20220529 12:42:29.230" level="WARN">                    "5.56%",</msg>
+<msg timestamp="20220529 12:42:29.235" level="WARN">                    "0.02%",</msg>
+<msg timestamp="20220529 12:42:29.243" level="WARN">                    "8.44%",</msg>
+<msg timestamp="20220529 12:42:29.244" level="WARN">                    "0.48%"</msg>
+<msg timestamp="20220529 12:42:29.245" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.249" level="WARN">                "emotion combined": "Neutral",</msg>
+<msg timestamp="20220529 12:42:29.252" level="WARN">                "box target": [</msg>
+<msg timestamp="20220529 12:42:29.254" level="WARN">                    "232",</msg>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "118",</msg>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "614",</msg>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                    "641"</msg>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                ],</msg>
+<msg timestamp="20220529 12:42:29.255" level="WARN">                "id": "1"</msg>
+<msg timestamp="20220529 12:42:29.262" level="WARN">            }</msg>
+<msg timestamp="20220529 12:42:29.264" level="WARN">        }</msg>
+<msg timestamp="20220529 12:42:29.266" level="WARN">    }</msg>
+<msg timestamp="20220529 12:42:29.268" level="WARN">}</msg>
+</errors>
+</robot>
